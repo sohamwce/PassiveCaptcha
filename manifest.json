@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "CAPTCHA4All",
+    "description": "A CAPTCHA solution for the visually challenged",
+    "version": "1.1",
+    "permissions": [
+        "topSites", "history", "browsingData"
+    ],
+    "icons": { 
+        "16": "icon.png",
+        "48": "icon.png",
+       "128": "icon.png" },
+    "content_scripts": [
+        {
+          "matches": ["https://*/*"],
+          "js": ["DOMinjection.js", "metaSession.js"]
+        }
+      ],
+    "background":{
+        "scripts":[
+            "topSites.js"
+        ]
+    },
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+   }
